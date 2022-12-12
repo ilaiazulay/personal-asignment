@@ -11,6 +11,7 @@ const options = {
 };
 
 // connect to MongoDb
+mongoose.set('strictQuery', false);
 mongoose
     .connect(url, options)
     .then(() => console.log('connected'))

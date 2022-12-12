@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="088e96aa-100a-47f6-b34b-12b58330421c" name="Changes" comment="personal" />
+    <list default="true" id="e6d26257-415a-42bf-ac94-1d24e8662c6a" name="Changes" comment="dependencies install">
+      <change afterPath="$PROJECT_DIR$/routes/root.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_connection.js" beforeDir="false" afterPath="$PROJECT_DIR$/db_connection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,9 +15,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="package.json" />
         <option value="JavaScript File" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -22,134 +25,59 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2IMQOeBDci4389hJraEUE34q6St" />
+  <component name="ProjectId" id="2IonhK5K2RReQh9j5uSOYCcPgbZ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ilaia/IdeaProjects/back-office-phase2/client/public&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2022.2.3\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ilaia\IdeaProjects\back-office-phase2\client\public" />
-      <recent name="C:\Users\ilaia\IdeaProjects\back-office-phase2\client\public\firstPage" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ilaia\IdeaProjects\back-office-phase2" />
-    </key>
+}]]></component>
+  <component name="RunManager" selected="JavaScript Debug.firstPage.html">
+    <configuration name="firstPage.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/personal-asignment/client/public/firstPage/firstPage.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="firstPage.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/client/public/firstPage/firstPage.js" working-dir="$PROJECT_DIR$/client/public/firstPage">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.firstPage.html" />
+        <item itemvalue="Node.js.firstPage.js" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="088e96aa-100a-47f6-b34b-12b58330421c" name="Changes" comment="" />
-      <created>1669988941896</created>
+      <changelist id="e6d26257-415a-42bf-ac94-1d24e8662c6a" name="Changes" comment="" />
+      <created>1670856921616</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1669988941896</updated>
-      <workItem from="1669988944753" duration="23372000" />
-      <workItem from="1670071944693" duration="165000" />
-      <workItem from="1670161245239" duration="1197000" />
-      <workItem from="1670168278274" duration="66000" />
-      <workItem from="1670227170287" duration="4224000" />
-      <workItem from="1670319329645" duration="4453000" />
-      <workItem from="1670398576740" duration="1342000" />
-      <workItem from="1670400065269" duration="28059000" />
-      <workItem from="1670522125778" duration="8029000" />
-      <workItem from="1670577690283" duration="12602000" />
-      <workItem from="1670754834848" duration="2065000" />
-      <workItem from="1670768315750" duration="71000" />
-      <workItem from="1670768433592" duration="11000" />
-      <workItem from="1670768935077" duration="1864000" />
-      <workItem from="1670774251166" duration="1345000" />
-      <workItem from="1670792117074" duration="3964000" />
-      <workItem from="1670834147389" duration="14083000" />
+      <updated>1670856921616</updated>
+      <workItem from="1670856924300" duration="8195000" />
     </task>
-    <task id="LOCAL‎-00001" summary="hard coded backend complete">
-      <created>1670004789994</created>
+    <task id="LOCAL‎-00001" summary="hidden file">
+      <created>1670856958963</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL‎-00001" />
       <option name="project" value="LOCAL‎" />
-      <updated>1670004789994</updated>
+      <updated>1670856958963</updated>
     </task>
-    <task id="LOCAL‎-00002" summary="add front and front functionality include user info and add home address">
-      <created>1670022229052</created>
+    <task id="LOCAL‎-00002" summary="dependencies install">
+      <created>1670857089453</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL‎-00002" />
       <option name="project" value="LOCAL‎" />
-      <updated>1670022229052</updated>
+      <updated>1670857089453</updated>
     </task>
-    <task id="LOCAL‎-00003" summary="added full hard coded fuctionality">
-      <created>1670024871101</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL‎-00003" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1670024871101</updated>
-    </task>
-    <task id="LOCAL‎-00004" summary="fix routes">
-      <created>1670162414865</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL‎-00004" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1670162414865</updated>
-    </task>
-    <task id="LOCAL‎-00005" summary="after CR">
-      <created>1670231268403</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL‎-00005" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1670231268403</updated>
-    </task>
-    <task id="LOCAL‎-00006" summary="personal">
-      <created>1670441864626</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL‎-00006" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1670441864627</updated>
-    </task>
-    <task id="LOCAL‎-00007" summary="personal">
-      <created>1670532185525</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL‎-00007" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1670532185525</updated>
-    </task>
-    <task id="LOCAL‎-00008" summary="personal">
-      <created>1670602234894</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL‎-00008" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1670602234894</updated>
-    </task>
-    <task id="LOCAL‎-00009" summary="personal">
-      <created>1670768347334</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL‎-00009" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1670768347334</updated>
-    </task>
-    <task id="LOCAL‎-00010" summary="personal">
-      <created>1670796074590</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL‎-00010" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1670796074590</updated>
-    </task>
-    <task id="LOCAL‎-00011" summary="personal">
-      <created>1670850847780</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL‎-00011" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1670850847780</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,12 +95,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="hard coded backend complete" />
-    <MESSAGE value="add front and front functionality include user info and add home address" />
-    <MESSAGE value="added full hard coded fuctionality" />
-    <MESSAGE value="fix routes" />
-    <MESSAGE value="after CR" />
-    <MESSAGE value="personal" />
-    <option name="LAST_COMMIT_MESSAGE" value="personal" />
+    <MESSAGE value="hidden file" />
+    <MESSAGE value="dependencies install" />
+    <option name="LAST_COMMIT_MESSAGE" value="dependencies install" />
   </component>
 </project>

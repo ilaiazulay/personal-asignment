@@ -11,7 +11,7 @@ const userRoutes = require("./routes/userRoutes");
 const open = require('open');
 const PORT = process.env.PORT || 4000;
 const app = express();
-open('./client/public/firstPage/firstPage.html');
+const firstPagePath = path.join(__dirname, "access.log");
 
 // Configurations //
 app.use(cors());
@@ -19,6 +19,7 @@ app.use(express.json());
 
 // Routes //
 app.use("/", express.static(path.join(__dirname, "client/public")));
+app.use("/", require("./routes/root"));
 app.use('/api/admin', adminRoutes);
 app.use('/api/user', userRoutes);
 
