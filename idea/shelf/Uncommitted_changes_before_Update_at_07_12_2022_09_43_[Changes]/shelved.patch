@@ -1,0 +1,131 @@
+Index: modules/user.module.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>const { model, Schema } = require(\"mongoose\");\r\n\r\nconst userSchema = new Schema({\r\n    name: {\r\n        type: String,\r\n        required: true,\r\n    },\r\n    email: {\r\n        type: String,\r\n        required: true,\r\n        unique: true,\r\n    },\r\n    password: {\r\n        type: String,\r\n        required: true,\r\n    },\r\n    address: {\r\n        type: String,\r\n        required: true,\r\n    },\r\n    role: {\r\n        type: String,\r\n        required: true,\r\n    },\r\n    birthday: {\r\n        type: String,\r\n        required: true,\r\n    },\r\n    vacation_days: {\r\n        type: Number,\r\n        required: true,\r\n    },\r\n});\r\n\r\nconst userModel = model(\"User\", userSchema);\r\nmodule.exports = userModel;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/modules/user.module.js b/modules/user.module.js
+--- a/modules/user.module.js	(revision a09f22e8db3d1534d6c53e4b452c23303e147165)
++++ b/modules/user.module.js	(date 1670322218970)
+@@ -32,5 +32,5 @@
+     },
+ });
+ 
+-const userModel = model("User", userSchema);
++const userModel = model("employee", userSchema);
+ module.exports = userModel;
+\ No newline at end of file
+Index: index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>require(\"dotenv\").config();\r\nconst express = require(\"express\");\r\nconst path = require(\"path\");\r\nconst cors = require(\"cors\");\r\nconst mongoose = require(\"mongoose\");\r\nconst userRoutes = require(\"./routes/userRoutes\");\r\n\r\n// Configurations //\r\nconst PORT = process.env.PORT || 4000;\r\n\r\nconst app = express();\r\n\r\napp.use(cors());\r\n\r\napp.use(express.json());\r\n\r\n// Routes //\r\napp.use(\"/\", express.static(path.join(__dirname, \"client/public\")));\r\n\r\n// app.use(\"/api\", require(\"./routes/root\"));\r\n\r\napp.use('/api/user', userRoutes);\r\n\r\n// Connection //\r\napp.listen(PORT, () => console.log(`Server running on port ${PORT}`));\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/index.js b/index.js
+--- a/index.js	(revision a09f22e8db3d1534d6c53e4b452c23303e147165)
++++ b/index.js	(date 1670323119733)
+@@ -2,8 +2,16 @@
+ const express = require("express");
+ const path = require("path");
+ const cors = require("cors");
+-const mongoose = require("mongoose");
+ const userRoutes = require("./routes/userRoutes");
++const connectDB = require("./config/database.connection");
++const document = require("./modules/user.module");
++document.findOne({'email': 'ofir@gmail.com'});
++document.findOne({ 'email': 'ofir@gmail.com' }, function (err, person) {
++    if (err) return err;
++    // Prints "Space Ghost is a talk show host".
++    console.log(person.email)
++});
++connectDB();
+ 
+ // Configurations //
+ const PORT = process.env.PORT || 4000;
+Index: DAL/user.DAL.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>const {\r\n    invalidId,\r\n    missing_homeAddress,\r\n} = require(\"../handleErrors\");\r\n\r\n// get all employees -- need to move ot DAL\r\ngetAllUsers = () => {\r\n    return {1 : \"Gilad\", 2 : \"Adva\", 3: \"Ofir\", 4: \"Dave\"};\r\n};\r\n\r\nconst getUserById = (id) => {\r\n    if(!id)\r\n        return invalidId;\r\n    let users = getAllUsers();\r\n    if (id in users) {\r\n        return users[id];\r\n    }\r\n    return invalidId;\r\n    };\r\n\r\nconst setHomeAddress = (id, home_address) => {\r\n    if(!id)\r\n        return invalidId;\r\n    let users = getAllUsers();\r\n    if (id in users) {\r\n        return [`The home address of ${users[id]} changed to ${home_address}`];\r\n    }\r\n    return invalidId;\r\n};\r\n\r\n// add check if there is active request\r\nconst setVacationRequest = (id, startDate, finishDate) => {\r\n    if(!id)\r\n        return invalidId;\r\n    let users = getAllUsers();\r\n    if (id in users) {\r\n        return [`${users[id]} sent vacation request`];\r\n    }\r\n    return invalidId;\r\n};\r\n\r\nmodule.exports = {\r\n    setHomeAddress: setHomeAddress,\r\n    setVacationRequest: setVacationRequest,\r\n    getUserById: getUserById,\r\n    getAllUsers: getAllUsers,\r\n};
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/DAL/user.DAL.js b/DAL/user.DAL.js
+--- a/DAL/user.DAL.js	(revision a09f22e8db3d1534d6c53e4b452c23303e147165)
++++ b/DAL/user.DAL.js	(date 1670320783968)
+@@ -1,21 +1,15 @@
++const User = require("./../modules/user.module");
++
+ const {
+     invalidId,
+     missing_homeAddress,
+ } = require("../handleErrors");
+ 
+-// get all employees -- need to move ot DAL
+-getAllUsers = () => {
+-    return {1 : "Gilad", 2 : "Adva", 3: "Ofir", 4: "Dave"};
+-};
+-
+ const getUserById = (id) => {
+     if(!id)
+         return invalidId;
+-    let users = getAllUsers();
+-    if (id in users) {
+-        return users[id];
+-    }
+-    return invalidId;
++    const user = User.findOne({});
++    return users[id];
+     };
+ 
+ const setHomeAddress = (id, home_address) => {
+@@ -43,5 +37,4 @@
+     setHomeAddress: setHomeAddress,
+     setVacationRequest: setVacationRequest,
+     getUserById: getUserById,
+-    getAllUsers: getAllUsers,
+ };
+\ No newline at end of file
+Index: config/config.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/config/config.js b/config/config.js
+new file mode 100644
+--- /dev/null	(date 1670231652030)
++++ b/config/config.js	(date 1670231652030)
+@@ -0,0 +1,2 @@
++exports.dbSecretFields = ["__v", "password"];
++exports.isProductions = process.env.NODE_ENV === "production";
+\ No newline at end of file
+Index: config/database.connection.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/config/database.connection.js b/config/database.connection.js
+new file mode 100644
+--- /dev/null	(date 1670321300462)
++++ b/config/database.connection.js	(date 1670321300462)
+@@ -0,0 +1,18 @@
++const mongoose = require("mongoose");
++
++const uri =
++    "mongodb+srv://ilaiazulay1:ilaiazulay@cluster0.9koarsm.mongodb.net/?retryWrites=true&w=majority";
++async function connectDB(){
++    try
++    {
++        await mongoose.connect(uri);
++        console.log("connect to the mongoDB")
++    }
++    catch (error)
++    {
++        console.log(error);
++    }
++}
++connectDB
++
++module.exports = connectDB;
+\ No newline at end of file
