@@ -14,7 +14,7 @@ const checkUserRole = async() => {
     try
     {
         console.log(queryIdValue);
-        const response = await fetch(`http://localhost:4000/api/user/checkRole?id=${queryIdValue}`, {method: "get"})
+        const response = await fetch(`https://assignment-2-personal.onrender.com/api/user/checkRole?id=${queryIdValue}`, {method: "get"})
         return response.json();
     }
     catch(error)
@@ -28,7 +28,7 @@ const checkUserStatus = async() => {
     try
     {
         console.log(queryIdValue);
-        const response = await fetch(`http://localhost:4000/api/user/checkStatus?id=${queryIdValue}`, {method: "get"})
+        const response = await fetch(`https://assignment-2-personal.onrender.com/api/user/checkStatus?id=${queryIdValue}`, {method: "get"})
         return response.json();
     }
     catch(error)
@@ -42,7 +42,7 @@ const display = async() => {
     try
     {
         console.log(queryIdValue);
-        const response = await fetch(`http://localhost:4000/api/user/userInfo?id=${queryIdValue}`, {method: "GET"})
+        const response = await fetch(`https://assignment-2-personal.onrender.com/api/user/userInfo?id=${queryIdValue}`, {method: "GET"})
         return response.json();
     }
     catch(error)
@@ -81,7 +81,7 @@ window.onload = async function userDisplay () {
 async function updateUser(homeAddressVar) {
     try
     {
-        const response = await fetch(`http://localhost:4000/api/user/update?id=${queryIdValue}&address=${homeAddressVar}`,{method:"put"})
+        const response = await fetch(`https://assignment-2-personal.onrender.com/api/user/update?id=${queryIdValue}&address=${homeAddressVar}`,{method:"put"})
         return response.json();
     }
     catch(error)
@@ -106,7 +106,7 @@ editUserForm.addEventListener('submit', (event) => {
 async function deleteUser(homeAddressVar) {
     try
     {
-        const response = await fetch(`http://localhost:4000/api/user/update?id=${queryIdValue}`,{method:"delete"})
+        const response = await fetch(`https://assignment-2-personal.onrender.com/api/user/update?id=${queryIdValue}`,{method:"delete"})
         return response.json();
     }
     catch(error)
