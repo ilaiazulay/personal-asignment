@@ -41,8 +41,7 @@ npm run dev
 Open page firstPage.html with live server
 
 ## API Docs
-**only working calls in the docs**
-https://documenter.getpostman.com/view/5840775/2s8YsnVvTk
+https://documenter.getpostman.com/view/24150243/2s8YzTVi7s
 
 ## Built with
 - Node.js
