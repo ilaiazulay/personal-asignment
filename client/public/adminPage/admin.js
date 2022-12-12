@@ -138,7 +138,7 @@ const checkUser = async() => {
     try
     {
         console.log(queryIdValue);
-        const response = await fetch(`http://localhost:4000/api/admin/checkRole?id=${queryIdValue}`, {method: "get"})
+        const response = await fetch(`https://assignment-2-personal.onrender.com/api/admin/checkRole?id=${queryIdValue}`, {method: "get"})
         return response.json();
     }
     catch(error)
@@ -151,7 +151,7 @@ const checkUser = async() => {
 const display = async() => {
     try
     {
-        const response = await fetch(`http://localhost:4000/api/admin/getUsers`, {method: "get"})
+        const response = await fetch(`https://assignment-2-personal.onrender.com/api/admin/getUsers`, {method: "get"})
         return response.json();
     }
     catch(error)
@@ -164,7 +164,7 @@ const display = async() => {
 const displayStatus = async() => {
     try
     {
-        const response = await fetch(`http://localhost:4000/api/admin/userStatus`, {method: "get"})
+        const response = await fetch(`https://assignment-2-personal.onrender.com/api/admin/userStatus`, {method: "get"})
         return response.json();
     }
     catch(error)
@@ -177,7 +177,7 @@ const displayStatus = async() => {
 const displayRole = async() => {
     try
     {
-        const response = await fetch(`http://localhost:4000/api/admin/usersRole`, {method: "get"})
+        const response = await fetch(`https://assignment-2-personal.onrender.com/api/admin/usersRole`, {method: "get"})
         return response.json();
     }
     catch(error)
@@ -191,7 +191,7 @@ async function editUserStatus(userId, status) {
     try
     {
         console.log(`user sent is: ${userId}`);
-        const response = await fetch(`http://localhost:4000/api/admin/updateStatus?id=${userId}&status=${status}`,{method:"put"})
+        const response = await fetch(`https://assignment-2-personal.onrender.com/api/admin/updateStatus?id=${userId}&status=${status}`,{method:"put"})
         return response.json();
     }
     catch(error)
@@ -204,7 +204,7 @@ async function editUserStatus(userId, status) {
 async function deleteUser(userId) {
     try
     {
-        const response = await fetch(`http://localhost:4000/api/admin/deleteUser?id=${userId}`,{method:"delete"})
+        const response = await fetch(`https://assignment-2-personal.onrender.com/api/admin/deleteUser?id=${userId}`,{method:"delete"})
         return response.json();
     }
     catch(error)
@@ -218,7 +218,7 @@ const checkDeleteAndEdit = async(userId) => {
     try
     {
         console.log(queryIdValue);
-        const response = await fetch(`http://localhost:4000/api/admin/checkRole?id=${userId}`, {method: "get"})
+        const response = await fetch(`https://assignment-2-personal.onrender.com/api/admin/checkRole?id=${userId}`, {method: "get"})
         return response.json();
     }
     catch(error)
@@ -231,7 +231,7 @@ const checkDeleteAndEdit = async(userId) => {
 async function createUser(email, address, firstName, lastName, age, gender, role) {
     try
     {
-        const response = await fetch(`http://localhost:4000/api/admin/createUser?email=${email}&address=${address}&firstName=${firstName}&lastName=${lastName}&age=${age}&gender=${gender}&role=${role}`,{method:"post"})
+        const response = await fetch(`https://assignment-2-personal.onrender.com/api/admin/createUser?email=${email}&address=${address}&firstName=${firstName}&lastName=${lastName}&age=${age}&gender=${gender}&role=${role}`,{method:"post"})
         return response.json();
     }
     catch(error)
